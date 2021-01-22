@@ -16,7 +16,8 @@ class Scraper
       hashes[student_card.to_sym] = {
         :name => hash.css(h4.student-name).text, 
         :location => hash.css(p.student-location).text,
-        :profile_url => hash.css(div.student-card a).attribute("src").value
+        :profile_url => hash.css(div.student-card a).text
+        # attribute("src").value
       }
       hashes
     end
